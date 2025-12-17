@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GDA - Gurgaon Development Authority</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* Navigation bar */
+    .navbar {
+      background: #333;
+      padding: 0 20px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex; /* makes tabs horizontal */
+    }
+
+    .navbar li {
+      margin-right: 20px;
+    }
+
+    .navbar a {
+      display: block;
+      padding: 14px 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      background: #555;
+    }
+
+    /* Sections */
+    .section {
+      width: 100%;
+    }
+
+    .content {
+      padding: 40px;
+      background: #fff;
+    }
+
+    /* Slider */
+    .slider {
+      width: 100%;
+      height: 50vh; /* 50% of screen height */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      animation: scroll 20s infinite linear;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fill slider without white space */
+      display: block;
+      flex-shrink: 0;
+    }
+
+    @keyframes scroll {
+      0%   { transform: translateX(0); }
+      20%  { transform: translateX(0); }
+      25%  { transform: translateX(-100%); }
+      45%  { transform: translateX(-100%); }
+      50%  { transform: translateX(-200%); }
+      70%  { transform: translateX(-200%); }
+      75%  { transform: translateX(-300%); }
+      95%  { transform: translateX(-300%); }
+      100% { transform: translateX(0); }
+    }
+      
+    /* Home section height should match slider only */
+    .home-section {
+      min-height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Tabs -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section home-section">
+    <div class="slider">
+      <div class="slides">
+       <img src="images/img1.jpg" alt="Image 1" />
+	   <img src="images/img2.jpg" alt="Image 2" />
+	   <img src="images/img3.jpg" alt="Image 3" />
+	   <img src="images/img4.jpg" alt="Image 4" />
+	   <img src="images/img5.jpg" alt="Image 5" />
+	   <img src="images/img6.jpg" alt="Image 6" />
+	   <img src="images/img7.jpg" alt="Image 7" />
+	   <img src="images/img8.jpg" alt="Image 8" />
+	   <img src="images/img9.jpg" alt="Image 9" />
+	   <img src="images/img10.jpg" alt="Image 10" />
+	   <img src="images/img11.jpg" alt="Image 11" />
+	   <img src="images/img12.jpg" alt="Image 12" />
+	   <img src="images/img13.jpg" alt="Image 13" />
+	   <img src="images/img14.jpg" alt="Image 14" />
+	   <img src="images/img15.jpg" alt="Image 15" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="section content">
+    <h1>About Us</h1>
+    <p>
+      Welcome to our website. We are passionate about delivering quality and
+      creating value for our customers. This section can describe your company,
+      vision, or services.
+    </p>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="section content">
+    <h1>Contact Us</h1>
+    <p>Email: info@example.com</p>
+    <p>Phone: +91-XXXXXXXXXX</p>
+    <p>Address: Your Office Address Here</p>
+  </section>
+
+</body>
+</html>

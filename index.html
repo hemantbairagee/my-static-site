@@ -4,24 +4,33 @@
   <meta charset="UTF-8" />
   <title>GDA - Gurgaon Development Authority</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+    * {
+      box-sizing: border-box;
     }
 
-    /* Navigation bar */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* ================= NAVBAR ================= */
     .navbar {
       background: #333;
-      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .navbar ul {
       list-style: none;
       margin: 0;
-      padding: 0;
-      display: flex; /* makes tabs horizontal */
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
     }
 
     .navbar li {
@@ -30,119 +39,204 @@
 
     .navbar a {
       display: block;
-      padding: 14px 10px;
+      padding: 14px 12px;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .navbar a:hover,
-    .navbar a.active {
+    .navbar a:hover {
       background: #555;
     }
 
-    /* Sections */
+    /* ================= SECTIONS ================= */
     .section {
       width: 100%;
     }
 
     .content {
-      padding: 40px;
       background: #fff;
+      padding: 50px 20px;
     }
 
-    /* Slider */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    /* ================= SLIDER ================= */
     .slider {
       width: 100%;
-      height: 50vh; /* 50% of screen height */
+      height: 50vh; /* 50% of viewport height */
       overflow: hidden;
-      position: relative;
     }
 
     .slides {
       display: flex;
-      width: 100%;
       height: 100%;
-      animation: scroll 20s infinite linear;
+      animation: scroll 60s linear infinite;
     }
 
     .slides img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* fill slider without white space */
-      display: block;
+      object-fit: cover;
       flex-shrink: 0;
+      display: block;
     }
 
     @keyframes scroll {
-      0%   { transform: translateX(0); }
-      20%  { transform: translateX(0); }
-      25%  { transform: translateX(-100%); }
-      45%  { transform: translateX(-100%); }
-      50%  { transform: translateX(-200%); }
-      70%  { transform: translateX(-200%); }
-      75%  { transform: translateX(-300%); }
-      95%  { transform: translateX(-300%); }
-      100% { transform: translateX(0); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-1400%); }
     }
-      
-    /* Home section height should match slider only */
-    .home-section {
-      min-height: auto;
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-wrap: wrap;
+      }
+
+      .slider {
+        height: 40vh;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation Tabs -->
+  <!-- ================= NAVIGATION ================= -->
   <nav class="navbar">
     <ul>
-      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About Us</a></li>
+      <li><a href="#whychoose">Why Choose Us</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#coreservices">Core Services</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
   </nav>
 
-  <!-- Home Section -->
-  <section id="home" class="section home-section">
+  <!-- ================= HOME ================= -->
+  <section id="home" class="section">
     <div class="slider">
       <div class="slides">
-       <img src="images/img1.jpg" alt="Image 1" />
-	   <img src="images/img2.jpg" alt="Image 2" />
-	   <img src="images/img3.jpg" alt="Image 3" />
-	   <img src="images/img4.jpg" alt="Image 4" />
-	   <img src="images/img5.jpg" alt="Image 5" />
-	   <img src="images/img6.jpg" alt="Image 6" />
-	   <img src="images/img7.jpg" alt="Image 7" />
-	   <img src="images/img8.jpg" alt="Image 8" />
-	   <img src="images/img9.jpg" alt="Image 9" />
-	   <img src="images/img10.jpg" alt="Image 10" />
-	   <img src="images/img11.jpg" alt="Image 11" />
-	   <img src="images/img12.jpg" alt="Image 12" />
-	   <img src="images/img13.jpg" alt="Image 13" />
-	   <img src="images/img14.jpg" alt="Image 14" />
-	   <img src="images/img15.jpg" alt="Image 15" />
+        <img src="images/img1.jpg" alt="Image 1">
+        <img src="images/img2.jpg" alt="Image 2">
+        <img src="images/img3.jpg" alt="Image 3">
+        <img src="images/img4.jpg" alt="Image 4">
+        <img src="images/img5.jpg" alt="Image 5">
+        <img src="images/img6.jpg" alt="Image 6">
+        <img src="images/img7.jpg" alt="Image 7">
+        <img src="images/img8.jpg" alt="Image 8">
+        <img src="images/img9.jpg" alt="Image 9">
+        <img src="images/img10.jpg" alt="Image 10">
+        <img src="images/img11.jpg" alt="Image 11">
+        <img src="images/img12.jpg" alt="Image 12">
+        <img src="images/img13.jpg" alt="Image 13">
+        <img src="images/img14.jpg" alt="Image 14">
+        <img src="images/img15.jpg" alt="Image 15">
       </div>
     </div>
   </section>
 
-  <!-- About Us Section -->
+  <!-- ================= ABOUT ================= -->
   <section id="about" class="section content">
-    <h1>About Us</h1>
-    <p>
-      Welcome to our website. We are passionate about delivering quality and
-      creating value for our customers. This section can describe your company,
-      vision, or services.
-    </p>
+    <div class="container">
+      <h1>About Us</h1>
+      <p>
+        We are a trusted name in delivering high-quality electrical and instrumentation
+        installation services across India. Our team specializes in on-site work for
+        industrial, commercial, and infrastructure projects, ensuring precision,
+        safety, and reliability.
+      </p>
+    </div>
   </section>
 
-  <!-- Contact Us Section -->
-  <section id="contact" class="section content">
-    <h1>Contact Us</h1>
-    <p>Email: info@example.com</p>
-    <p>Phone: +91-XXXXXXXXXX</p>
-    <p>Address: Your Office Address Here</p>
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section id="whychoose" class="section content">
+    <div class="container">
+      <h1>Why Choose Us?</h1>
+      <p>
+        Nationwide presence with projects executed across India.<br>
+        Skilled workforce trained in industry best practices.<br>
+        Commitment to safety, quality, and timely delivery.<br>
+        Tailored solutions for diverse industrial needs.
+      </p>
+    </div>
   </section>
+
+  <!-- ================= MISSION ================= -->
+  <section id="mission" class="section content">
+    <div class="container">
+      <h1>Mission</h1>
+      <p>
+        To deliver reliable, safe, and efficient electrical and instrumentation
+        solutions that empower industries across India.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= VISION ================= -->
+  <section id="vision" class="section content">
+    <div class="container">
+      <h1>Vision</h1>
+      <p>
+        To be the most trusted partner for electrical and instrumentation services,
+        setting benchmarks in quality and innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CORE SERVICES ================= -->
+  <section id="coreservices" class="section content">
+    <div class="container">
+      <h1>Core Services</h1>
+      <p>
+        Power Cable Laying – Reliable installation for uninterrupted power distribution.<br>
+        HLT Cable Installation – Heat Leak Test cabling for advanced monitoring.<br>
+        RS485 Cable Laying – Structured communication cabling for automation.<br>
+        FCV Cable Laying – Flow Control Valve cabling for process control.<br>
+        PT Cable Installation – Pressure Transmitter cabling for accurate measurement.<br>
+        PCV Pipe Laying – Protective piping for electrical and instrumentation.<br>
+        Bend Pipe Laying – Customized routing for complex layouts.<br>
+        HLT Sensor Installation – Precision sensor setup for safety and compliance.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section content">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Email: xxxx@xxxxxx.xxx</p>
+      <p>Phone: +91-XXXXXXXXXX</p>
+      <p>Address: Your Office Address Here</p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    © 2025 Gurgaon Development Authority. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
